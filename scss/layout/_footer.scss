@@ -1,0 +1,65 @@
+@use "../abstract/"as*;
+.footer{
+    background-color: $clr-dark;
+    padding: 3rem;
+    &__wrapper{
+        @include mediaQuery{
+        @include unevenGrid(2fr 1fr 1fr 1fr 1fr);
+      
+        .footer__2nd{
+            h5{
+                text-align: center;
+            }
+        }
+        }
+        .footer__1st{
+            span{
+                color: $clr-accent;
+                font-size: 3rem;
+            }
+            h5{
+                text-align: justify;
+                max-width: 36rem;
+                color: $clr-light;
+                margin-bottom: 1rem;
+                
+            }
+            ul{
+                @include mediaQuery{
+                    margin-bottom: 5rem;
+                }
+                @include flex(center, center);
+                gap: 3rem;
+                color: $clr-light;
+                li{
+                    font-size: 2.5rem;
+                }
+            }
+        }
+        .footer__2nd{
+            h5{
+                font-size: 1.6rem;
+                margin-bottom: 2rem;
+                color: $clr-light;
+            }
+            ul{
+                color: $clr-light;
+                text-align: center;
+                margin-bottom: 5rem;
+                li{
+                    img{
+                        width: 80%;
+                        margin-bottom: .5rem;
+                    }
+                }
+            }
+        }
+    }
+    &__bottom{
+        border-top: 1px solid $clr-light;
+        @include flex(space-between, flex-start);
+        a{
+            color: $clr-light;
+        }
+    }
+}

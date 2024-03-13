@@ -1,0 +1,64 @@
+@use '../abstract'as*;
+.header{
+    @include roundedContainer();
+    &__wrapper{
+        padding: 1rem 0;
+        margin-bottom: 1rem;
+        @include flex(space-between, center);
+        button{
+            font-size: 1.5rem;
+            border: none;
+            min-width: 13rem;
+            padding: 1rem;
+            border: none;
+            border-radius: 5rem;
+            text-transform: uppercase;
+            background: $clr-accent;
+            color: $clr-light;
+            gap: 2rem;
+           
+        }
+
+        ul.open{
+            visibility: visible;
+            opacity: 1;
+        }
+        ul{
+            @include mediaQuery{
+                position: static;
+                background-color: unset;
+
+                padding: unset;
+                width: auto;
+                height: unset;
+                flex-direction: row;
+                visibility: visible;
+                opacity: 1;
+                li a{
+                    font-size: 1.6rem;
+                }
+    
+            }
+            position: fixed;
+            background: #fff;
+            top: 5rem;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            z-index: 99999;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            visibility: hidden;
+            opacity: 0;
+            transition: .5s ease;
+       li{
+        text-align: center;
+       }
+            a{
+                font-size: 2.5rem;
+                color: $clr-dark;
+            }
+        }
+    }
+    }
